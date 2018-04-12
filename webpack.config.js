@@ -8,7 +8,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
-        exclude: '/node_modules/'
+        exclude: ['/node_modules/', /\.test\.tsx?$/]
       }
     ]
   },
@@ -25,10 +25,12 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: path.resolve(__dirname, '/js/'),
     filename: 'bundle.js'
   },
   devServer: {
     port: 8080,
-    historyApiFallback: true
+    historyApiFallback: true,
+    publicPath: path.resolve(__dirname, '/js/')
   }
 }

@@ -10,7 +10,7 @@ export const Hello: React.SFC<Props> = ({greeting, onSetGreeting}) => {
   return (
     <div>
       <div className="greeting">
-        Hello lol {greeting}
+        Hello {greeting} !!
       </div>
       <button onClick={handleSetGreeting}>tagada</button>
     </div>
